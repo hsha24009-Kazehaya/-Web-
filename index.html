@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寄り添い相談おみくじ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="background-layer" class="background-layer">
+        </div>
+
+    <div class="container">
+        <header>
+            <h1>独立行政法人 寄り添い心理総合相談窓口</h1>
+            <p class="subtitle">※本窓口は、皆様の主観的な要望に無条件で同調することを保証するものではありません。</p>
+        </header>
+
+        <main id="screen-input" class="window-box">
+            <div class="window-header">お悩み処理申請書（新規作成）</div>
+            <div class="window-body">
+                <p class="instruction">以下より該当するお悩みの管轄（ジャンル）を選択し、申請を行ってください。</p>
+                
+                <div class="form-group">
+                    <label for="genre-select">【項目選択】</label>
+                    <select id="genre-select">
+                        <option value="work">仕事（タスク・人間関係・キャリア）</option>
+                        <option value="love">恋愛（片思い・破局・コミュニケーション）</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button id="btn-submit" class="btn btn-primary">処理を申請する</button>
+                </div>
+            </div>
+        </main>
+
+        <main id="screen-result" class="window-box hidden">
+            <div class="window-header">決定通知書（非開示処分類似通告）</div>
+            <div class="window-body">
+                <div class="meta-info">
+                    <p>発信番号：寄相第 <span id="info-id">2026-0041</span> 号</p>
+                    <p>処理日時：<span id="info-date">2026年05月22日</span></p>
+                    <p>本日受領回数：<span id="info-count">1</span> 回目</p>
+                </div>
+
+                <hr class="border-line">
+
+                <div class="result-section">
+                    <p class="label">【判定（運勢ランク）】</p>
+                    <div id="result-rank" class="result-rank">現状維持</div>
+                    
+                    <p class="label">【指導通告（アドバイス）】</p>
+                    <p id="result-text" class="result-text">ここにアドバイスが出力されます。</p>
+                </div>
+
+                <hr class="border-line">
+
+                <div class="btn-group-result">
+                    <button id="btn-appeal" class="btn btn-danger">不服申し立て（異議）を送信する</button>
+                    <button id="btn-reset" class="btn btn-secondary">別の案件を再申請</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay hidden">
+        <div class="popup-box">
+            <div class="popup-header">【警告】自動却下通知</div>
+            <div class="popup-body">
+                <p id="popup-message">異議は却下されました。あなたの感情論に付き合う時間はありません。自分の部屋でふて寝してください。</p>
+                <button id="btn-popup-close" class="btn btn-primary">了解（閉じる）</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
